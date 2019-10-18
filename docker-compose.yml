@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  create_react:
+    container_name: create_react 
+    image: create_react
+    build:
+      context: .
+      dockerfile: Dockerfile 
+    tty: true
