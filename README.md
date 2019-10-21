@@ -8,7 +8,7 @@ Docker React Creator Project
 4.) navigate to  project_name , build and start coding!
 ```
 Note:
-If you already have existing react project, most possible point 3000 is already in use.
+If you already have existing react project,  port 3000 might already used.
 
 To ensure port availability for the new project, change Port  in .env and docker-compose-dev.yml to desired port and rebuild
 
