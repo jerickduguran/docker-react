@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  react_project:
+    container_name: react_project
+    image: react_project:dev
+    build:
+      context: .  
+      dockerfile: ./docker/dev/Dockerfile
+    volumes:
+      - '.:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    ports: 
+      - '3010:3010'  
+      # - '443:443' 

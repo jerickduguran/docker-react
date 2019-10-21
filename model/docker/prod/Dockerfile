@@ -1,6 +1,6 @@
 
 # stage: 1 — Development environment
-FROM node:12.12.0  as BaseApp 
+FROM node:12.12.0  as DockerReactWrapper 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app 
 # Move files to image
@@ -15,7 +15,7 @@ RUN rm -rf /etc/nginx/conf.d
 # Copy Custom Nginx Config
 COPY /docker/server/conf /etc/nginx 
 # Copy Project source to server dir
-COPY --from=BaseApp /usr/src/app /usr/share/nginx/app 
+COPY --from=DockerReactWrapper /usr/src/app /usr/share/nginx/app 
 # Copy initial public files to web root directory
 COPY /docker/server/public /usr/share/nginx/html
 # Copy docker entry point to server
